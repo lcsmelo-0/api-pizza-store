@@ -17,4 +17,4 @@ mongoose.connect(process.env.MONGODB_URI ||
 app.use('/funcionarios', department_controller);
 app.use('/sabores', product_controller);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
