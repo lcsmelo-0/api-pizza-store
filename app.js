@@ -10,8 +10,8 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(cors());
 
-mongoose.connect(
-    'mongodb://localhost:27017/http_app', 
+mongoose.connect(process.env.MONGODB_URI || 
+    'mongodb://localhost/pizzastoreapi', 
     {useNewUrlParser: true});
 
 app.use('/funcionarios', department_controller);
