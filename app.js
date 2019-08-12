@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const department_controller = require('./departmentController');
 const product_controller = require('./productController');
 const app = express();
-const PORT = process.env.PORT || 8000
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
@@ -18,4 +17,4 @@ mongoose.connect(
 app.use('/funcionarios', department_controller);
 app.use('/sabores', product_controller);
 
-app.listen(PORT);
+app.listen(3000);
